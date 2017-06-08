@@ -10,6 +10,10 @@ public class Individual {
     public Individual() {
     }
 
+    public createRandomIndividual(){
+        
+    }
+
     public int[] getIndividual() {
         return individual;
     }
