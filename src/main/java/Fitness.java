@@ -32,6 +32,34 @@ public class Fitness {
         }
     }
 
+    public String geneStringOf(Individual individual){
+        String gene = "";
+        for(int i=0; i<individual.getIndividual().length; i++){
+            gene = gene + individual.getIndividual()[i];
+        }
+        return gene;
+    }
+
+    public boolean isThereWinner(Individual[] individuals){
+        boolean solutionFound = false;
+        for(int i=0; i<individuals.length; i++){
+            if(geneStringOf(individuals[i]).equalsIgnoreCase(geneStringOf(solution))){
+                solutionFound = true;
+            }
+        }
+        return solutionFound;
+    }
+
+    public void getWinner(Individual[] individuals){
+        Individual winner = new Individual();
+        for(int i=0; i<individuals.length; i++){
+            if(geneStringOf(individuals[i]).equalsIgnoreCase(geneStringOf(solution))){
+                winner = individuals[i];
+                winner.printChromosome();
+            }
+        }
+    }
+
 
     public Individual getMostFit() {
         return mostFit;

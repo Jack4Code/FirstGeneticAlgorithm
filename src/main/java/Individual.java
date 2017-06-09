@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Created by jackg on 6/4/2017.
  */
@@ -10,8 +12,14 @@ public class Individual {
     public Individual() {
     }
 
-    public createRandomIndividual(){
-        
+    public void createRandomIndividual(){
+
+        for(int i=0; i<chromosomeSize; i++){
+            Random randInt = new Random();
+            int binary = randInt.nextInt(1 + 1 - 0) + 0;
+            individual[i] = binary;
+        }
+
     }
 
     public int[] getIndividual() {

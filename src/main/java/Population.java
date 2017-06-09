@@ -3,7 +3,7 @@
  */
 public class Population {
 
-    private int populationSize = 50;
+    private int populationSize = 5000;
     private Individual[] individuals = new Individual[populationSize];
 
     public Individual[] getIndividuals() {
@@ -14,10 +14,11 @@ public class Population {
         this.individuals = individuals;
     }
 
-    public Individual[] generatePopulationOfRandomIndividuals(){
-        //make them random
-
-
-        return individuals;
+    public void generatePopulationOfRandomIndividuals(){
+        for(int i=0; i<populationSize; i++){
+            Individual individual = new Individual();
+            individual.createRandomIndividual();
+            individuals[i] = individual;
+        }
     }
 }
